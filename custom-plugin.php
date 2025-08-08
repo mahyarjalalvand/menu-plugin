@@ -43,7 +43,12 @@ function init_elementor_custom_widget() {
     }
 }
 
- add_action('plugins_loaded' , 'init_elementor_custom_widget')
+ add_action('plugins_loaded' , 'init_elementor_custom_widget');
 
+ function render_files() {
+    wp_register_style('custom-menu-widget-css', plugins_url('custom-style.css', __FILE__ ),[],'1.0.0');
+    wp_register_script('custom-menu-widget-js' , plugins_url('custom-scripts.js',__FILE__ ),[],'1.0.0' , true );
+ }
+
+ add_action( 'wp_enqueue_scripts', 'render_files' );
 ?>
-

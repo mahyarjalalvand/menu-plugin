@@ -13,6 +13,13 @@ class Elementor_Custom_Menu_Widget extends \Elementor\Widget_Base{
     public function get_categories(){
         return ['basic'];
     }
+    public function get_style_depends() {
+    return [ 'custom-menu-widget-css' ];
+    }
+
+    public function get_script_depends() {
+    return [ 'custom-menu-widget-js' ];
+    }
     protected function _register_controls(){
         $this->start_controls_section(
             'content_section',
